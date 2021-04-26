@@ -1,0 +1,17 @@
+Locals.TestStandPublic = RunState.Engine.GetTestStandPath(TestStandPath_Public)
+RunState.Sequence.Main["Check Gasket [DI_#4-DI13]"].Result.Status == "Passed"
+RunState.Sequence.Main["Message Popup"].Result.ButtonHit == 2
+NameOf(Step)
+NameOf(RunState.Sequence)
+Evaluate(NameOf(RunState.Step))
+Mid(NameOf(RunState.Step), Find(NameOf(RunState.Step) ,"Cmd:") +Len("Cmd:"))
+"Távolítsd el a Load-ot, mert offszetmérés következik..." + NameOf(RunState.Sequence)
+Mid( RunState.Step.AsPropertyObject.Comment, Find( RunState.Step.AsPropertyObject.Comment,"Param:") + Len("Param:"))
+-- ?:if else, swich case, zárjel,
+Locals.SelectedRangeTest == "Range:100mA"? Locals.Current*=1E3:
+ (
+    Locals.SelectedRangeTest == "Range:50uA" ? Locals.Current*=1E6:
+      (
+         Locals.SelectedRangeTest == "Range:10uA"? Locals.Current*=1E6 :-1
+       )
+  )

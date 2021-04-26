@@ -1,0 +1,122 @@
+
+##Links
+https://github.com/ionic-team/ionic-framework
+
+##Exensions
+vscode 
+- extension: angular essentials
+- material icon theme
+##New Project
+ionic start ionic-angular-course
+ionic start be-fit tabs --type=angular --capacitor
+##Run
+ionic serve
+
+##Components
+ionic g -> és itt egy listából választhatsz hogy mit szeretnél létrehozni
+ionic generate page recipes/recipe-detail
+ionic g és válaszd pl a service-t
+
+
+### ion-list
+https://ionicframework.com/docs/api/list
+# text-list
+<ion-list>
+  <ion-item>
+    <ion-label>Pokémon Yellow</ion-label>
+  </ion-item>
+</ion-list>
+#img-list
+<ion-list>
+  <ion-item *ngFor="let recipe of recpies">
+    <ion-avatar slot="start">
+      <ion-img [src]="recipe.imageUrl"></ion-img>
+    </ion-avatar>
+    <ion-label>
+      {{recipe.title}}
+    </ion-label>
+  </ion-item>
+</ion-list>
+
+### back-button
+https://ionicframework.com/docs/api/back-button
+<!-- Default back button -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+### routerLink binding
+<ion-list>
+  <ion-item *ngFor = "let item of items">
+    <a [routerLink] = item.link > {{item.text}} </a>
+  </ion-item>
+</ion-list>
+
+# slots
+https://www.joshmorony.com/understanding-how-slots-are-used-in-ionic-4/
+slot="start"
+
+-start: elejére kerül
+-primary:  végére kerül
+-icon-only: csak ikon
+
+### back button
+- A defaultHref akkor használja ha nincs elozmény...
+- Akkor muködik jól, ha új page-et hozol létre, és ezzel komponenst is.
+- Ha nem tudja hová kell vissza navigálni, akkor nem teszi ki a back buttont!
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/recipes">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>{{loadedRecipe.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+### Alert
+https://www.tutorialandexample.com/ionic-alert/
+---
+<ion-buttons>
+  <ion-button (click)="onDeleteRecpie()">
+</ion-buttons>
+---
+constructor(public alertCtrl: AlertController) { }
+              
+async onDeleteRecpie() {
+  const alert = await this.alertCtrl.create({
+    header: 'Are you sure',
+    subHeader: 'Do you really want to delete the recpie?',
+    message: 'Your battery about to die',
+    buttons: [
+      {
+        text:'Cancel',
+        role:'cancel'
+      },
+      {
+        text:'Delete',
+        handler:() => { 
+          /*Do Something*/
+        }
+      }
+    ]
+  });
+  await alert.present();
+  const result = await alert.onDidDismiss();
+  console.log(result);
+}
+
+
+
+Gyakori hibák:
+1. A beillesztett komponenst nem része az adott modulnak... 
+
+
+-----------
+a 70. videót néztem meg
+
+21.04.21 - befejeztem a 4-es fejezetet... 04. Angular + Ionic

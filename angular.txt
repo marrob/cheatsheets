@@ -1,5 +1,5 @@
 ---F10-csapat---
-Király Árpád - solar@hu.inter.net // o is újonc
+Király Árpád - solar@hu.inter.net // o is újoncs
 Ormos Attila - attila.ormos@gmail.com
 Villányi Ágnes - villnyiagnes@gmail.com
 Takács Bálint - takib77@gmail.com //nála van bolt project
@@ -447,6 +447,22 @@ gotoItems(hero: Hero) {
   this.router.navigate(['/heroes', { id: heroId }]);
 }
 ---
+
+--- Angualr Form ---
+1. minedn form elemnek kell hogy legyen neve! name! ez azonosítja egyedileg az elemet a formban
+A tesztel? eszköz a név lapján hivaktozik rá.
+
+<div class="form-group col-6">
+  <label class="text-warning" for="category">Category:</label>
+  <select class="form-control" id="category" name ="category" [(ngModel)]="movie.category" required>
+    <option>Drama</option>
+    <option>Action</option>
+    <option>Fantasy</option>
+  </select>
+</div>
+
+
+
 --- Observable ---
 Subject:
 - nem kell neki kezdoérték
@@ -793,3 +809,67 @@ const getShortMessages = (messages) => messages
   
   
   return list.filter(i=> i.name.includes(name) && i.rating >= rating).map(j=>j.name);
+
+--- Method Exists ---
+  const checkMethod = (parent: any, name :string):boolean=>{
+    return typeof Object.getPrototypeOf(parent)[name] != 'undefined'
+  }
+
+--- Unit Test ---
+
+import { TestBed } from '@angular/core/testing';
+import { AppComponent } from './app.component';
+
+describe('AppComponent', () => {
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [
+        AppComponent
+      ],
+    }).compileComponents();
+  });
+
+  const checkMethod = (parent: any, name :string):boolean=>{
+    return typeof Object.getPrototypeOf(parent)[name] != 'undefined'
+  }
+
+  it('should create the app', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
+  });
+
+  it(`should have as title 'mókus'`, () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app.title).toEqual('mókus');
+  });
+
+  it('should render title', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.content span').textContent).toContain('mókus app is running!');
+  });
+
+  it('should sumirze the orders', ()=>{
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    const orders=[
+      { id:1, name:'süt?', amount: 45000 },
+      { id:2, name:'vasaló', amount: 14000 },
+      { id:3, name:'porszivó', amount: 30000 },
+    ];
+    expect(app.getSumOfOrders(orders)).toEqual(89000);
+  });
+});
+--- Szopások ---
+selectCategory(category){
+  let index = this.categoryCardList.findIndex((item)=>{ return item.category == category});
+  this.chosenByCategory=this.categoryCardList[index];
+}
+vs.
+selectCategory(category){
+  let index = this.categoryCardList.findIndex((item)=>{item.category == category});
+  this.chosenByCategory=this.categoryCardList[index];
+}

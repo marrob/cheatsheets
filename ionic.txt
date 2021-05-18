@@ -40,6 +40,7 @@ https://ionicframework.com/docs/api/list
 
 ### back-button
 https://ionicframework.com/docs/api/back-button
+Csak akkor jelenit meg a back buttont ha tudja hogy hová lehet visszalépni.
 <!-- Default back button -->
 <ion-header>
   <ion-toolbar>
@@ -48,6 +49,16 @@ https://ionicframework.com/docs/api/back-button
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
+<!-- defaultHref -->
+Ha nincs el?zmény akkor a defaultHref="/"-ben megadott linkre lép
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/places/tabs/discover"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Place Detail</ion-title>
+  </ion-toolbar
 
 ### routerLink binding
 <ion-list>
@@ -110,13 +121,55 @@ async onDeleteRecpie() {
   console.log(result);
 }
 
+### text-center...
+
+<div class="ion-text-center ion-padding">
+  <ion-button 
+    color="primary">More
+  </ion-button>
+</div>
+
+EZ MÁN NEM JÓ:
+
+<div text-center padding>
+  <ion-button 
+    color="primary">More
+  </ion-button>
+</div>
 
 
-Gyakori hibák:
+
+--- Gyakori hibák ---
 1. A beillesztett komponenst nem része az adott modulnak... 
+
+--- Page Lifecycle ---
+  ngOnInit() {
+    console.log(this.recipes);
+  }
+  ionViewWillEnter(){
+    console.log('ionViewWillEnter');
+  }
+
+  ionViewDidEnter(){
+    console.log('ionViewDidEnter');
+  }
+
+  ionViewWillLeave(){
+    console.log('ionViewWillLeave');
+  }
+  ionViewDidLeave(){
+    console.log('ionViewDidLeave');
+  }
+  ngOnDestroy(){
+    console.log('ngOnDestroy');
+  }
 
 
 -----------
 a 70. videót néztem meg
 
 21.04.21 - befejeztem a 4-es fejezetet... 04. Angular + Ionic
+
+21.05.13 103 videót kell megnézni
+
+21.05.14 106-os videót megnéztem a 107-es jön

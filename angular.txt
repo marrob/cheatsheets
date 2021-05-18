@@ -448,6 +448,37 @@ gotoItems(hero: Hero) {
 }
 ---
 
+--- Routing Traceing ---
+imports: [
+    RouterModule.forRoot(
+      routes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
+]
+
+--- routerLink ---
+ez egy abszolut link
+[routerLink]="['/', 'places', 'tabs', 'discover', loadedPlaces[0].id]"
+így is irhatod
+[routerLink]="['/places/tabs/discover/' + loadedPlaces[0].id]"
+
+--- back navigation ---
+export class PlaceDetailPage implements OnInit {
+  constructor(
+    private router:Router,
+    private navCtrl:NavController
+    ) { }
+
+  ngOnInit() {
+  }
+  onBookPlace(){
+    this.router.navigateByUrl('places/tabs/discover'); 
+    this.navCtrl.navigateBack(['/places/tabs/discover']); //Max szerint ez ajánlott
+    this.navCtrl.pop(); //ha nincs el?zmény akkor nem tud vissza lépni
+  }
+}
+
+
 --- Angualr Form ---
 1. minedn form elemnek kell hogy legyen neve! name! ez azonosítja egyedileg az elemet a formban
 A tesztel? eszköz a név lapján hivaktozik rá.
@@ -873,3 +904,8 @@ selectCategory(category){
   let index = this.categoryCardList.findIndex((item)=>{item.category == category});
   this.chosenByCategory=this.categoryCardList[index];
 }
+
+
+--- Általános ---
+--- ngOnInit ---
+mindig egyszer fut le, ezután a cachb?l veszi az oldalt

@@ -17,6 +17,10 @@ ionic g -> és itt egy listából választhatsz hogy mit szeretnél létrehozni
 ionic generate page recipes/recipe-detail
 ionic g és válaszd pl a service-t
 
+#megjegyzés: 
+- Az "ionic g TestIonicPage" és az "ng g TestNgPage" megegyezik 
+- Általában page-et használunk inoic-ban mert csak ezekkel lehet navigálni :)
+
 
 ### ion-list
 https://ionicframework.com/docs/api/list
@@ -75,19 +79,6 @@ slot="start"
 -primary:  végére kerül
 -icon-only: csak ikon
 
-### back button
-- A defaultHref akkor használja ha nincs elozmény...
-- Akkor muködik jól, ha új page-et hozol létre, és ezzel komponenst is.
-- Ha nem tudja hová kell vissza navigálni, akkor nem teszi ki a back buttont!
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/recipes">
-      </ion-back-button>
-    </ion-buttons>
-    <ion-title>{{loadedRecipe.title}}</ion-title>
-  </ion-toolbar>
-</ion-header>
 
 ### Alert
 https://www.tutorialandexample.com/ionic-alert/
@@ -121,55 +112,213 @@ async onDeleteRecpie() {
   console.log(result);
 }
 
-### text-center...
-
-<div class="ion-text-center ion-padding">
-  <ion-button 
-    color="primary">More
-  </ion-button>
-</div>
-
-EZ MÁN NEM JÓ:
-
-<div text-center padding>
-  <ion-button 
-    color="primary">More
-  </ion-button>
-</div>
 
 
+## Side-Drawer
+https://ionicframework.com/docs/api/menu
+- ha az app.component.html-be teszed akkor az alkamzásban mindenütt elérhet? lesz a mindenü
+- menu a menuId-vel lehet összerendelni, ha egy menu van akkor nem kötelez?
+- menu megnyitása:
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
---- Gyakori hibák ---
-1. A beillesztett komponenst nem része az adott modulnak... 
+- A menu megnyitására létezik egy injektálható komponens a MenuController
+- Bezárni a menüt menü elem választás után úgy lehet ha a menu minden elemét ion-menu-toggle elmebe teszed pl:
+<ion-content>
+  <ion-list>
+    <ion-menu-toggle menu="m1">
+      <ion-item lines="none" routerLink="/places/tabs/discover">
+        <ion-icon name="business" slot="start"> </ion-icon>
+        <ion-label> Discover Places </ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+  <ion-list>
+<ion-content>
 
---- Page Lifecycle ---
-  ngOnInit() {
-    console.log(this.recipes);
+#megjegyzések:
+1. <ion-menu side="start" menuId="m1"> <ion-menu-toggle menu="m1"> és a<ion-menu-button menu="m1"></ion-menu-button> helyeken a menünek azonosítójának egyeznie kell!!!!
+2. A hamburger mindig látható ha: <ion-menu-button autoHide="false" menu="m1"></ion-menu-button>
+
+
+
+
+
+ion-menu_3.entry.js:86 [DEPRECATED][ion-menu] Using the [main] attribute is deprecated, please use the "contentId" property instead:
+BEFORE:
+  <ion-menu>...</ion-menu>
+  <div main>...</div>
+
+AFTER:
+  <ion-menu contentId="main-content"></ion-menu>
+  <div id="main-content">...</div>
+
+## NavController
+//this.router.navigateByUrl('places/tabs/discover');
+//this.navCtrl.navigateBack(['/places/tabs/discover']); //Max szerint ez ajánlott
+//this.navCtrl.pop(); //ha nincs el?zmény akkor nem tud vissza lépni
+
+##Guard 
+A segitségével pl meg lehet valósítani hogy egy route útvonal betölthet? vagy tilható legyen.
+
+## Modal
+ModalController
+
+#1. modal component megnyitása:
+  onBookPlace(){
+    this.modalCtrl
+    .create({component:CreateBookingComponent})
+    .then(modalElement=>{
+        modalElement.present()
+      });
   }
-  ionViewWillEnter(){
-    console.log('ionViewWillEnter');
+#2. paraméter átadása modal component -nek
+onBookPlace(){
+  this.modalCtrl
+  .create({
+    component:CreateBookingComponent, 
+    componentProps: {selectedPlace:this.place}
+  })
+  .then(modalElement=>{
+      modalElement.present()
+    });
+}
+
+3.ModalController használata:
+export class CreateBookingComponent implements OnInit {
+  @Input() selectedPlace: Place;
+  constructor(private modalCtrl:ModalController) { }
+  ngOnInit() { } 
+  onBookPlace() {
+    this.modalCtrl.dismiss({message:'This is a dummy message!'}, 'confirm');
+  }
+  onCancel(){
+    this.modalCtrl.dismiss(null, 'cancel');
+  }
+}
+4. Minta modal
+<ion-header>
+  <ion-toolbar>
+    <ion-title> {{selectedPlace.title}} </ion-title>
+    <ion-button (click)=onCancel()> <ion-icon name="close"></ion-icon></ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-text-center ion-padding">
+  <h1>Book this place!</h1>
+  <p>{{selectedPlace.description}}</p>
+  <ion-button color="primary" (click)="onBookPlace()"> </ion-button>
+</ion-content>
+---
+export class CreateBookingComponent implements OnInit {
+@Input() selectedPlace:Place;
+constructor() { }
+ngOnInit() {}
+}
+
+5. érték átvétele modal component -t?l:
+
+this.modalCtrl
+  .create({
+    component: CreateBookingComponent,
+    componentProps: { selectedPlace: this.place }
+  })
+  .then(modalElement => {
+    modalElement.present();
+    return modalElement.onDidDismiss();
+  }).then(resultData => {
+    console.log(resultData.data, resultData.role);
+    if (resultData.role == 'confirm') {
+      console.log('BOOKED!');
+    }
+  })
+
+megjegyzések:
+1. fel kell vennem abba a modulba a koponest amit meg akarok jeleniteni
+  declarations: [PlaceDetailPage, CreateBookingComponent]
+
+---
+#grid
+
+<ion-content>
+<ion-grid >
+  <ion-row class="ion-align-items-stretch">
+    <ion-col size="4" offset="2">Row 1 Col 1 </ion-col>
+    <ion-col size="4">
+      <ion-card>
+        <ion-card-content>
+          <h1>The Column</h1>
+          <p>Row 1 Col 2</p>
+        </ion-card-content>
+      </ion-card>  
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+ez a default:<ion-row class="ion-align-items-stretch">
+
+
+
+
+---
+ViewChild, Form validator
+...
+<form #f="ngForm">
+ <ion-button type ="submit" !datesValid()"> BOOK! </ion-button>
+</form>
+
+export class CreateBookingComponent implements OnInit {
+ @ViewChild('f') form: NgForm;
+ 
+  datesValid() {
+    if(typeof(this.form) != 'undefined')
+      const startDate = new Date(this.form.value['date-from']);
+    return true;
+}
+
+...
+
+# SCSS 
+ion-button{
+    --background:rgb(0, 255, 128);
+    --box-shadow: 2px 2px 2px rgba(0,0,0, 0.6);
+    --color:red;
   }
 
-  ionViewDidEnter(){
-    console.log('ionViewDidEnter');
-  }
+    Styling & Theming Basics Docs: https://ionicframework.com/docs/theming/basics
 
-  ionViewWillLeave(){
-    console.log('ionViewWillLeave');
-  }
-  ionViewDidLeave(){
-    console.log('ionViewDidLeave');
-  }
-  ngOnDestroy(){
-    console.log('ngOnDestroy');
-  }
+    More on the CSS Variables: https://ionicframework.com/docs/theming/css-variables
 
+    The Color Generator: https://ionicframework.com/docs/theming/color-generator
+
+    Dive deeper into Theming: https://ionicframework.com/docs/theming/advanced
+
+    More CSS Resources: https://academind.com/learn/css/
 
 -----------
 a 70. videót néztem meg
-
 21.04.21 - befejeztem a 4-es fejezetet... 04. Angular + Ionic
-
 21.05.13 103 videót kell megnézni
-
 21.05.14 106-os videót megnéztem a 107-es jön
+21.05.21- kezd?tdhet a 08. Ionic Components Overview 
+27.05.21- kezdodhet a 09. Styling & Theming Ionic Apps fejezet
+21.05.25- 127. ion-text jön
+21.05.25- 129. ion-text jön
+21.05.28 - 151-es kövekezkezik
+21.06.01 - 164-es kövekezkezik
+21.06.03 - 167-es kövekezkezik
+21.06.04 - 170-es ben fennáló hibákat ki kell javítani
+21.06.06 - 178-as kövekezkezik
+21.06.08 - 182-es volt a hibákat ki kell javítani
+21.06.09 - 190-es következik
+21.06.13 - a place detail oldalon sok hiba van a 196-os következik
+21.06.15 - 13. Adding Google Maps kövekezkezik
+
+Egy új összefogólalót kell írni az angulár és az ioinc-ról
+
+(click)="onEdit(place.id)"
+
+[routerLink]="['/','places','tabs','offers','edit', place.id]

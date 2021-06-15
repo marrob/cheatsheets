@@ -800,12 +800,16 @@ csak observable-nek van pipe-ja ez a pipe nem ugyan az mint a ng g pipe...
 emitálás: az observable értéket ad, button klick is lehet emit, http válasz stb...
 
 of(),
-switchMappel: ha van belso observable és ha külso emitál valamit, akkor belso cacleldik
+switchMap: ha van belso observable és ha külso emitál valamit, akkor belso cancel?dik
+map: nem obeservable tér vissza, ( a map áltlában a lista elemein végez valami m?veletet)
 exhaustMap: ami a megvárja hogy belso observable befejezze a dolgát
-mergeMap:a külsö observable hozza létre az új szálat -> úk konkurens szálon índitja subsricbe
+mergeMap:a külsö observable hozza létre az új szálat -> új konkurens szálon índitja subsricbe
 concatMap: külsö observable emitál akkor létrehoz, 
 
+
 observable.pipe(take(4)): annyiszor veszi az obeservable ahányérték van 
+tap() Used when you want to affect outside state with a notification without altering the notification
+
 ---
 import { fromEvent, interval } from "rxjs";
 import { concatMap, take, exhaustMap } from "rxjs/operators";
@@ -905,7 +909,13 @@ selectCategory(category){
   this.chosenByCategory=this.categoryCardList[index];
 }
 
+--- Objektum klónoása, hard copy, object clone ---
+getPlace(id:string){
+  return {...this._places.find( p=>p.id === id)};
+}
 
 --- Általános ---
 --- ngOnInit ---
 mindig egyszer fut le, ezután a cachb?l veszi az oldalt
+
+

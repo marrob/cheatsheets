@@ -1,18 +1,3 @@
----F10-csapat---
-Király Árpád - solar@hu.inter.net // o is újoncs
-Ormos Attila - attila.ormos@gmail.com
-Villányi Ágnes - villnyiagnes@gmail.com
-Takács Bálint - takib77@gmail.com //nála van bolt project
-Szucs Tamás - oborsil@gmail.com 
-09dporkokolabm@gmail.com - // nála van a messenger
-
-A régit új csapat project:
-https://github.com/takib77/str-angular-project-001
-
---- !panCSERkódolók ---
-https://github.com/marrob/str-angular-project-001
--Todo a közös repót létrehozni
-
 --------------------------------------------
 Git Parancsok
 git push --set-upstream origin <branch>
@@ -38,9 +23,6 @@ Angular
 --------------------------------------------
 Json-server
 json-server --w .\server\heroes.json
-
-
-
 
 - meghivokat kiküldeni: Settings -> Manage Acess ->Invite a colaborator
 - meghivo elfogadása, klónozni a repókat
@@ -68,8 +50,6 @@ New pull request  józsi ból a dev-be k  Józsi munkáját beleteszi a devbe
 - pull request visszavonása ha valami nem lett jó 
 - pull request és revertel vissza lehet voni valakiét
 
-
-
 pl.: a dev-be szeretném a mergeleést, 
 - akkor a Brench -> Merge Branch és ebbol
 
@@ -80,9 +60,6 @@ ng generate component watch
 ng generate pipe prefix
 ng generate directive directive/delay
 ng g service service/user
-
-
-
 
 -- Telepítés ---
 -package.json-
@@ -480,8 +457,7 @@ export class PlaceDetailPage implements OnInit {
 
 
 --- Angualr Form ---
-1. minedn form elemnek kell hogy legyen neve! name! ez azonosítja egyedileg az elemet a formban
-A tesztel? eszköz a név lapján hivaktozik rá.
+1. 
 
 <div class="form-group col-6">
   <label class="text-warning" for="category">Category:</label>

@@ -165,81 +165,6 @@ AFTER:
 ##Guard 
 A segitségével pl meg lehet valósítani hogy egy route útvonal betölthet? vagy tilható legyen.
 
-## Modal
-ModalController
-
-#1. modal component megnyitása:
-  onBookPlace(){
-    this.modalCtrl
-    .create({component:CreateBookingComponent})
-    .then(modalElement=>{
-        modalElement.present()
-      });
-  }
-#2. paraméter átadása modal component -nek
-onBookPlace(){
-  this.modalCtrl
-  .create({
-    component:CreateBookingComponent, 
-    componentProps: {selectedPlace:this.place}
-  })
-  .then(modalElement=>{
-      modalElement.present()
-    });
-}
-
-3.ModalController használata:
-export class CreateBookingComponent implements OnInit {
-  @Input() selectedPlace: Place;
-  constructor(private modalCtrl:ModalController) { }
-  ngOnInit() { } 
-  onBookPlace() {
-    this.modalCtrl.dismiss({message:'This is a dummy message!'}, 'confirm');
-  }
-  onCancel(){
-    this.modalCtrl.dismiss(null, 'cancel');
-  }
-}
-4. Minta modal
-<ion-header>
-  <ion-toolbar>
-    <ion-title> {{selectedPlace.title}} </ion-title>
-    <ion-button (click)=onCancel()> <ion-icon name="close"></ion-icon></ion-button>
-  </ion-toolbar>
-</ion-header>
-<ion-content class="ion-text-center ion-padding">
-  <h1>Book this place!</h1>
-  <p>{{selectedPlace.description}}</p>
-  <ion-button color="primary" (click)="onBookPlace()"> </ion-button>
-</ion-content>
----
-export class CreateBookingComponent implements OnInit {
-@Input() selectedPlace:Place;
-constructor() { }
-ngOnInit() {}
-}
-
-5. érték átvétele modal component -t?l:
-
-this.modalCtrl
-  .create({
-    component: CreateBookingComponent,
-    componentProps: { selectedPlace: this.place }
-  })
-  .then(modalElement => {
-    modalElement.present();
-    return modalElement.onDidDismiss();
-  }).then(resultData => {
-    console.log(resultData.data, resultData.role);
-    if (resultData.role == 'confirm') {
-      console.log('BOOKED!');
-    }
-  })
-
-megjegyzések:
-1. fel kell vennem abba a modulba a koponest amit meg akarok jeleniteni
-  declarations: [PlaceDetailPage, CreateBookingComponent]
-
 ---
 #grid
 
@@ -316,7 +241,8 @@ a 70. videót néztem meg
 21.06.09 - 190-es következik
 21.06.13 - a place detail oldalon sok hiba van a 196-os következik
 21.06.15 - 13. Adding Google Maps kövekezkezik
-
+21.06.18 - 211 következik
+21.06.22- a 212 következik
 Egy új összefogólalót kell írni az angulár és az ioinc-ról
 
 (click)="onEdit(place.id)"

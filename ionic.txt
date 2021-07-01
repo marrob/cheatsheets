@@ -245,6 +245,3 @@ a 70. videót néztem meg
 21.06.22- a 212 következik
 Egy új összefogólalót kell írni az angulár és az ioinc-ról
 
-(click)="onEdit(place.id)"
-
-[routerLink]="['/','places','tabs','offers','edit', place.id]

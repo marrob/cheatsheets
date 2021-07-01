@@ -26,3 +26,17 @@ yearControl.setValue('1999');
 expect(yearControl.valid).toBeTruthy();
 # 3. email:
 "\S+@\S+\.\S+"
+
+# 2 és 5 között bármi
+^.{2,5}$
+
+#
+^^(\d+.\d+[numk])|(\d+[numk])$
+1m
+u
+
+31.1	Magánhangzóval kezdődik és végződik egy szó
+/^[aeiou].*[aeiou]$/
+
+31.2	Első és utolsó karakter egyezik
+^(.).*\1$

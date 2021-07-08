@@ -242,6 +242,7 @@ a 70. videót néztem meg
 21.06.13 - a place detail oldalon sok hiba van a 196-os következik
 21.06.15 - 13. Adding Google Maps kövekezkezik
 21.06.18 - 211 következik
-21.06.22- a 212 következik
-Egy új összefogólalót kell írni az angulár és az ioinc-ról
-
+21.06.22 - 212 következik
+21.07.01 - 214 következik
+21.07.04 - 224 következik
+21.07.08 - 226 következik

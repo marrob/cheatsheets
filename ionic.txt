@@ -13,13 +13,13 @@ ionic start be-fit tabs --type=angular --capacitor
 ionic serve
 
 ##Components
-ionic g -> és itt egy listából választhatsz hogy mit szeretnél létrehozni
+ionic g -> ï¿½s itt egy listï¿½bï¿½l vï¿½laszthatsz hogy mit szeretnï¿½l lï¿½trehozni
 ionic generate page recipes/recipe-detail
-ionic g és válaszd pl a service-t
+ionic g ï¿½s vï¿½laszd pl a service-t
 
-#megjegyzés: 
-- Az "ionic g TestIonicPage" és az "ng g TestNgPage" megegyezik 
-- Általában page-et használunk inoic-ban mert csak ezekkel lehet navigálni :)
+#megjegyzï¿½s: 
+- Az "ionic g TestIonicPage" ï¿½s az "ng g TestNgPage" megegyezik 
+- ï¿½ltalï¿½ban page-et hasznï¿½lunk inoic-ban mert csak ezekkel lehet navigï¿½lni :)
 
 
 ### ion-list
@@ -27,7 +27,7 @@ https://ionicframework.com/docs/api/list
 # text-list
 <ion-list>
   <ion-item>
-    <ion-label>Pokémon Yellow</ion-label>
+    <ion-label>Pokï¿½mon Yellow</ion-label>
   </ion-item>
 </ion-list>
 #img-list
@@ -44,7 +44,7 @@ https://ionicframework.com/docs/api/list
 
 ### back-button
 https://ionicframework.com/docs/api/back-button
-Csak akkor jelenit meg a back buttont ha tudja hogy hová lehet visszalépni.
+Csak akkor jelenit meg a back buttont ha tudja hogy hovï¿½ lehet visszalï¿½pni.
 <!-- Default back button -->
 <ion-header>
   <ion-toolbar>
@@ -55,7 +55,7 @@ Csak akkor jelenit meg a back buttont ha tudja hogy hová lehet visszalépni.
 </ion-header>
 
 <!-- defaultHref -->
-Ha nincs el?zmény akkor a defaultHref="/"-ben megadott linkre lép
+Ha nincs el?zmï¿½ny akkor a defaultHref="/"-ben megadott linkre lï¿½p
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -75,8 +75,8 @@ Ha nincs el?zmény akkor a defaultHref="/"-ben megadott linkre lép
 https://www.joshmorony.com/understanding-how-slots-are-used-in-ionic-4/
 slot="start"
 
--start: elejére kerül
--primary:  végére kerül
+-start: elejï¿½re kerï¿½l
+-primary:  vï¿½gï¿½re kerï¿½l
 -icon-only: csak ikon
 
 
@@ -116,9 +116,9 @@ async onDeleteRecpie() {
 
 ## Side-Drawer
 https://ionicframework.com/docs/api/menu
-- ha az app.component.html-be teszed akkor az alkamzásban mindenütt elérhet? lesz a mindenü
-- menu a menuId-vel lehet összerendelni, ha egy menu van akkor nem kötelez?
-- menu megnyitása:
+- ha az app.component.html-be teszed akkor az alkamzï¿½sban mindenï¿½tt elï¿½rhet? lesz a mindenï¿½
+- menu a menuId-vel lehet ï¿½sszerendelni, ha egy menu van akkor nem kï¿½telez?
+- menu megnyitï¿½sa:
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -127,8 +127,8 @@ https://ionicframework.com/docs/api/menu
   </ion-toolbar>
 </ion-header>
 
-- A menu megnyitására létezik egy injektálható komponens a MenuController
-- Bezárni a menüt menü elem választás után úgy lehet ha a menu minden elemét ion-menu-toggle elmebe teszed pl:
+- A menu megnyitï¿½sï¿½ra lï¿½tezik egy injektï¿½lhatï¿½ komponens a MenuController
+- Bezï¿½rni a menï¿½t menï¿½ elem vï¿½lasztï¿½s utï¿½n ï¿½gy lehet ha a menu minden elemï¿½t ion-menu-toggle elmebe teszed pl:
 <ion-content>
   <ion-list>
     <ion-menu-toggle menu="m1">
@@ -140,9 +140,9 @@ https://ionicframework.com/docs/api/menu
   <ion-list>
 <ion-content>
 
-#megjegyzések:
-1. <ion-menu side="start" menuId="m1"> <ion-menu-toggle menu="m1"> és a<ion-menu-button menu="m1"></ion-menu-button> helyeken a menünek azonosítójának egyeznie kell!!!!
-2. A hamburger mindig látható ha: <ion-menu-button autoHide="false" menu="m1"></ion-menu-button>
+#megjegyzï¿½sek:
+1. <ion-menu side="start" menuId="m1"> <ion-menu-toggle menu="m1"> ï¿½s a<ion-menu-button menu="m1"></ion-menu-button> helyeken a menï¿½nek azonosï¿½tï¿½jï¿½nak egyeznie kell!!!!
+2. A hamburger mindig lï¿½thatï¿½ ha: <ion-menu-button autoHide="false" menu="m1"></ion-menu-button>
 
 
 
@@ -159,11 +159,11 @@ AFTER:
 
 ## NavController
 //this.router.navigateByUrl('places/tabs/discover');
-//this.navCtrl.navigateBack(['/places/tabs/discover']); //Max szerint ez ajánlott
-//this.navCtrl.pop(); //ha nincs el?zmény akkor nem tud vissza lépni
+//this.navCtrl.navigateBack(['/places/tabs/discover']); //Max szerint ez ajï¿½nlott
+//this.navCtrl.pop(); //ha nincs el?zmï¿½ny akkor nem tud vissza lï¿½pni
 
 ##Guard 
-A segitségével pl meg lehet valósítani hogy egy route útvonal betölthet? vagy tilható legyen.
+A segitségével egy route útvonal betölthet? vagy tiltható legyen.
 
 ---
 #grid
@@ -224,23 +224,23 @@ ion-button{
     More CSS Resources: https://academind.com/learn/css/
 
 -----------
-a 70. videót néztem meg
+a 70. videï¿½t nï¿½ztem meg 
 21.04.21 - befejeztem a 4-es fejezetet... 04. Angular + Ionic
-21.05.13 103 videót kell megnézni
-21.05.14 106-os videót megnéztem a 107-es jön
+21.05.13 103 videï¿½t kell megnï¿½zni
+21.05.14 106-os videï¿½t megnï¿½ztem a 107-es jï¿½n
 21.05.21- kezd?tdhet a 08. Ionic Components Overview 
 27.05.21- kezdodhet a 09. Styling & Theming Ionic Apps fejezet
-21.05.25- 127. ion-text jön
-21.05.25- 129. ion-text jön
-21.05.28 - 151-es kövekezkezik
-21.06.01 - 164-es kövekezkezik
-21.06.03 - 167-es kövekezkezik
-21.06.04 - 170-es ben fennáló hibákat ki kell javítani
-21.06.06 - 178-as kövekezkezik
-21.06.08 - 182-es volt a hibákat ki kell javítani
+21.05.25- 127. ion-text jï¿½n
+21.05.25- 129. ion-text jï¿½n
+21.05.28 - 151-es kï¿½vekezkezik
+21.06.01 - 164-es kï¿½vekezkezik
+21.06.03 - 167-es kï¿½vekezkezik
+21.06.04 - 170-es ben fennï¿½lï¿½ hibï¿½kat ki kell javï¿½tani
+21.06.06 - 178-as kï¿½vekezkezik
+21.06.08 - 182-es volt a hibï¿½kat ki kell javï¿½tani
 21.06.09 - 190-es következik
 21.06.13 - a place detail oldalon sok hiba van a 196-os következik
-21.06.15 - 13. Adding Google Maps kövekezkezik
+21.06.15 - 13. Adding Google Maps kï¿½vekezkezik
 21.06.18 - 211 következik
 21.06.22 - 212 következik
 21.07.01 - 214 következik
@@ -248,3 +248,9 @@ a 70. videót néztem meg
 21.07.08 - 226 következik
 21.07.09 - 228 következik
 21.07.12 - 229 következik
+21.07.13 - 233 következik
+21.07.14. - 235 nem megy .........................
+21.07.18 - 244 következik
+21.07.22 - 245 következik
+21.07.23 - 247 fonál elvesztése
+21.07.28 - 248 fonál keresgélése

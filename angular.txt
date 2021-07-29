@@ -1,14 +1,14 @@
 --------------------------------------------
 Git Parancsok
 git push --set-upstream origin <branch>
-- A VSC nem veszi észre az uj branchet és nem lehet kiválasztani
+- A VSC nem veszi ï¿½szre az uj branchet ï¿½s nem lehet kivï¿½lasztani
 1. git fetch
-  > kiirja hogy van új branch
-  > VSC újrinditíás és git fetch
+  > kiirja hogy van ï¿½j branch
+  > VSC ï¿½jrinditï¿½ï¿½s ï¿½s git fetch
   > git fetch --all
-Többiek dolgoztak
-- pull request kérése dev-rol
-- robi-branch: git merge origin/dev ( dev változásainak áthozása)
+Tï¿½bbiek dolgoztak
+- pull request kï¿½rï¿½se dev-rol
+- robi-branch: git merge origin/dev ( dev vï¿½ltozï¿½sainak ï¿½thozï¿½sa)
 - robi-branch: commitol
 --------------------------------------------
 Angular
@@ -24,34 +24,34 @@ Angular
 Json-server
 json-server --w .\server\heroes.json
 
-- meghivokat kiküldeni: Settings -> Manage Acess ->Invite a colaborator
-- meghivo elfogadása, klónozni a repókat
-- belépni a könyvtárba
-- függoségek letöltése npm i
-- barnch létrehozása -dev a fejlesztésnél legyen 
-- a dev-bö legyen a további elágazás pl orsi
-- mej visssza a dev-be legyen a további elágazás pl mátyás
-- paracsor mengynintása 
-- git fetch (hogy frissüljön a státusz)
+- meghivokat kikï¿½ldeni: Settings -> Manage Acess ->Invite a colaborator
+- meghivo elfogadï¿½sa, klï¿½nozni a repï¿½kat
+- belï¿½pni a kï¿½nyvtï¿½rba
+- fï¿½ggosï¿½gek letï¿½ltï¿½se npm i
+- barnch lï¿½trehozï¿½sa -dev a fejlesztï¿½snï¿½l legyen 
+- a dev-bï¿½ legyen a tovï¿½bbi elï¿½gazï¿½s pl orsi
+- mej visssza a dev-be legyen a tovï¿½bbi elï¿½gazï¿½s pl mï¿½tyï¿½s
+- paracsor mengynintï¿½sa 
+- git fetch (hogy frissï¿½ljï¿½n a stï¿½tusz)
 - a helyi szerkeszto jelenleg a main brenchben van
-- a helyi szerkesztoben ki kell választani a sajátot pl józsi-t
-- manulásian belép egy branchbe: git checkout origin/orsi 
-- módosítás
-- Commit megjegyzéssel
-- a módosíások feltöltése szinkornizáslása 
-- mindenkinek a saját branchét érinti a módosítás
-- emeljük be orsi munkáját a dev brench-be
-- belépünk orsi branchébe és pull request 
-- Orsi csinál egy pull requestet,  mibe base:dev, 
-New pull request  józsi ból a dev-be k  Józsi munkáját beleteszi a devbe
-- merge pull request majd jóváhagyás Confirm
-- orsi behuzta a józsi munkáját a dev-be egy pull request segitsgével
-- ha kész a munkák akkor beküldünk egy pull request (ezzel jezem hogy kész van, és ezután be kell emelni )
-- pull request visszavonása ha valami nem lett jó 
-- pull request és revertel vissza lehet voni valakiét
+- a helyi szerkesztoben ki kell vï¿½lasztani a sajï¿½tot pl jï¿½zsi-t
+- manulï¿½sian belï¿½p egy branchbe: git checkout origin/orsi 
+- mï¿½dosï¿½tï¿½s
+- Commit megjegyzï¿½ssel
+- a mï¿½dosï¿½ï¿½sok feltï¿½ltï¿½se szinkornizï¿½slï¿½sa 
+- mindenkinek a sajï¿½t branchï¿½t ï¿½rinti a mï¿½dosï¿½tï¿½s
+- emeljï¿½k be orsi munkï¿½jï¿½t a dev brench-be
+- belï¿½pï¿½nk orsi branchï¿½be ï¿½s pull request 
+- Orsi csinï¿½l egy pull requestet,  mibe base:dev, 
+New pull request  jï¿½zsi bï¿½l a dev-be k  Jï¿½zsi munkï¿½jï¿½t beleteszi a devbe
+- merge pull request majd jï¿½vï¿½hagyï¿½s Confirm
+- orsi behuzta a jï¿½zsi munkï¿½jï¿½t a dev-be egy pull request segitsgï¿½vel
+- ha kï¿½sz a munkï¿½k akkor bekï¿½ldï¿½nk egy pull request (ezzel jezem hogy kï¿½sz van, ï¿½s ezutï¿½n be kell emelni )
+- pull request visszavonï¿½sa ha valami nem lett jï¿½ 
+- pull request ï¿½s revertel vissza lehet voni valakiï¿½t
 
-pl.: a dev-be szeretném a mergeleést, 
-- akkor a Brench -> Merge Branch és ebbol
+pl.: a dev-be szeretnï¿½m a mergeleï¿½st, 
+- akkor a Brench -> Merge Branch ï¿½s ebbol
 
 --- parancsok --- 
 ng new ang-basic-setup
@@ -61,7 +61,7 @@ ng generate pipe prefix
 ng generate directive directive/delay
 ng g service service/user
 
--- Telepítés ---
+-- Telepï¿½tï¿½s ---
 -package.json-
 "build": "ng build -o"
 
@@ -75,9 +75,9 @@ npm i font-awesome
 ],
 
 --- Komponensek ---
-- Az angualar komponenseket a Sabalonban (html-fájlban) kell összekötni egymással.
-- Az kompnensek változi közül csak azok köthetoek össze amik @Input vagy @Output-al vannak jelölve
-- Egy komponens csak a saját komponenséhez tartozó *.ts-fájlban lévo változókat látja
+- Az angualar komponenseket a Sabalonban (html-fï¿½jlban) kell ï¿½sszekï¿½tni egymï¿½ssal.
+- Az kompnensek vï¿½ltozi kï¿½zï¿½l csak azok kï¿½thetoek ï¿½ssze amik @Input vagy @Output-al vannak jelï¿½lve
+- Egy komponens csak a sajï¿½t komponensï¿½hez tartozï¿½ *.ts-fï¿½jlban lï¿½vo vï¿½ltozï¿½kat lï¿½tja
 <app-action-button
     [btnClass]="'btn-info'"
     (clicked)="onSelectButtonClick()">
@@ -106,8 +106,8 @@ export class HomeComponent implements OnInit{
   ){}
   products: Porduct[] = this.prService.list;
 }
---- Osztályra globáli változók ---
-Osztályon belül, de metóduson kívül mindig this (pl:this.varName) segítségével érjük el a változót
+--- Osztï¿½lyra globï¿½li vï¿½ltozï¿½k ---
+Osztï¿½lyon belï¿½l, de metï¿½duson kï¿½vï¿½l mindig this (pl:this.varName) segï¿½tsï¿½gï¿½vel ï¿½rjï¿½k el a vï¿½ltozï¿½t
 class DataRowComponent{
     @Input() dataRow: User = new User();
     onDeleteButtonClick(): void {
@@ -115,7 +115,7 @@ class DataRowComponent{
     }
 }
 --- Output Event ---
-Kimeno esmemény létrehozása egy komponenshez
+Kimeno esmemï¿½ny lï¿½trehozï¿½sa egy komponenshez
 export class DataListComponent implements OnInit {
     @Output() selectClick: EventEmitter<User> = new EventEmitter();
     onDeleteButtonClick(user:User ): void {
@@ -124,7 +124,7 @@ export class DataListComponent implements OnInit {
 }
 
 --- Event ---
-Esmény castolása
+Esmï¿½ny castolï¿½sa
 onClick(event:Event):void{
   const text:HTMLButtonElement = <HTMLButtonElement>event.target.textContent;
   console.log(text);
@@ -136,8 +136,8 @@ onChangePhrase(event:Event):void{
 
 --- Select ---
 <ion-item>
-  <ion-label>Én vagyok például: </ion-label>
-  <ion-select multiple="false" cancelText="Mégsem" okText="Rendben"  (ionChange)="onCurrentUserChanged($event)" >
+  <ion-label>ï¿½n vagyok pï¿½ldï¿½ul: </ion-label>
+  <ion-select multiple="false" cancelText="Mï¿½gsem" okText="Rendben"  (ionChange)="onCurrentUserChanged($event)" >
     <ion-select-option *ngFor="let user of users" value="{{user.name}}"> {{user.name}}</ion-select-option>
   </ion-select>
 </ion-item>
@@ -150,7 +150,7 @@ onCurrentUserChanged(event:Event){
 
 
 --- Input databindig ---
-data objektum [key] kulcsával kijelölt adat közötti kétirányú kapcsolat
+data objektum [key] kulcsï¿½val kijelï¿½lt adat kï¿½zï¿½tti kï¿½tirï¿½nyï¿½ kapcsolat
 "banana in the box"
 <input type="text" [(ngModel)]="data[key]" >
 Ehhez kell a
@@ -170,13 +170,13 @@ import { FormsModule } from '@angular/forms';
 
 
 --- DOM class ---
-DOM osztályhoz új osztály hozzáadása property bind-gel:
+DOM osztï¿½lyhoz ï¿½j osztï¿½ly hozzï¿½adï¿½sa property bind-gel:
 <button (click)="onUserCliced()" class="btn" [class]="btnClass">
     <app-icon [icon]="icon"></app-icon>
     {{ text }}
 </button>
 
-Felhasználása:
+Felhasznï¿½lï¿½sa:
 <app-action-button
     [btnClass]="'btn-info'"
     (clicked)="onSelectButtonClick()"
@@ -230,8 +230,8 @@ export class SorterPipe implements PipeTransform {
   }
 }
 
-|-jelekkel választjuk el a különbözo pipeokat
-:-jelekkel választuk az paramétereket
+|-jelekkel vï¿½lasztjuk el a kï¿½lï¿½nbï¿½zo pipeokat
+:-jelekkel vï¿½lasztuk az paramï¿½tereket
 
 <div *ngFor="let user of users | filter:phraseString  :  'name' | sorter:columnKey">
     <td>{{ user.id }}</td>
@@ -242,7 +242,7 @@ vagy
 <ng-container *ngFor="let product of products | filter:phrase:'name'">
    <app-product-card [product]="product"></app-product-card>
 </ng-container>
---- *ngIf feltételes DOM ---
+--- *ngIf feltï¿½teles DOM ---
 <div class = "card user-card" *ngIf="user.id >0">
 </div>
 --- http client ---
@@ -350,22 +350,9 @@ product:Product = new Product();
      )
   }
 }
---- vagy pipe-al ---
-// 1. Kiolvasni az id paramétert az url-bol.
-// 2. Ezzel a paraméterrel meghívni az EventService.get metódust.
-event$: Observable<Event> = this.activatedRoute.params.pipe(
-  switchMap( params => this.eventService.get(params.id) )
-);
 
---- vagy így tipusosan ---
-product$:Observable<Product> = this.activatedRoute.params.pipe(
-  switchMap(params=> {
-    if(Number(params.id)===0){
-      return of(new Product());
-    }
-    return this.productService.get(Number(params.id));
-  })
-)
+
+
 
 --- vagy paramMap -al ---
 loadedRecipe:Recipe;
@@ -426,35 +413,10 @@ gotoItems(hero: Hero) {
 ---
 
 --- Routing Traceing ---
-imports: [
-    RouterModule.forRoot(
-      routes,
-      { enableTracing: true } // <-- debugging purposes only
-    )
-]
 
 --- routerLink ---
-ez egy abszolut link
-[routerLink]="['/', 'places', 'tabs', 'discover', loadedPlaces[0].id]"
-így is irhatod
-[routerLink]="['/places/tabs/discover/' + loadedPlaces[0].id]"
 
 --- back navigation ---
-export class PlaceDetailPage implements OnInit {
-  constructor(
-    private router:Router,
-    private navCtrl:NavController
-    ) { }
-
-  ngOnInit() {
-  }
-  onBookPlace(){
-    this.router.navigateByUrl('places/tabs/discover'); 
-    this.navCtrl.navigateBack(['/places/tabs/discover']); //Max szerint ez ajánlott
-    this.navCtrl.pop(); //ha nincs el?zmény akkor nem tud vissza lépni
-  }
-}
-
 
 --- Angualr Form ---
 1. 
@@ -470,84 +432,10 @@ export class PlaceDetailPage implements OnInit {
 
 
 
---- Observable ---
-Subject:
-- nem kell neki kezdoérték
-- könnyü létrhozni
-- mükdöése az Observable-hoz hasonlít de könyü kiváltani az eseményt
-
-BehaviorSubject:
- - az Observable-bol szarmzaik 
- - minden frissen felrítakozó megkapja az utolsó állapotot sima Observable ellenében 
- - mindig kell hogy legyen kezdoértéke
- - xxx.next.('uj ertek') segitsegevel lehet új értéket küldeni
-Observable:
- - nem kell hogy legyen kezdoértke
- 
-így értesíheted a felíratkozókat a változásrol:
-getAll(): void {
-  this.list$.next(this.list);
-}
-
---
-import { Injectable } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class ObservableService {
-
-  ob$: Observable<number> = new Observable((observer) => {
-    setInterval(() => {
-      observer.next(Math.floor(Math.random() * 20));
-    }, 1000);
-    setTimeout(() => observer.complete(), 10000);
-    setTimeout(() => observer.error('fail'), 5000);
-  });
-  constructor() {
-    const sub: Subscription = this.ob$.subscribe(
-      num => console.log("Service-bol", num)
-    );
-  }
-}
---- Subject ---
-import { Component, NgModule } from '@angular/core'
-import { BrowserModule } from '@angular/platform-browser'
-import { Observable, Subject } from 'rxjs/Rx';
-
-@Component({
-  selector: 'my-app',
-  template: `
-    <div>
-      <h2>Open the console.</h2>
-    </div>
-  `,
-})
-@NgModule({
-  imports: [ BrowserModule ],
-  declarations: [ App ],
-  bootstrap: [ App ]
-})
-export class App {
-
-  constructor() {}
-
-  let subject = new Subject();
-
-  // Subscribe in Component
-  subject.subscribe(next => {
-    console.log(next);
-  });
-
-  setInterval(() => {
-    // Make your auth call and export this from Service
-    subject.next(new Date())
-  }, 1000)
-}
 
 
---- Sablon referencia változók ---
+
+--- Sablon referencia vï¿½ltozï¿½k ---
 jele #
 <div class="row">
   <div class="col-8 offset-2">
@@ -602,15 +490,8 @@ Ng Toastr: https://www.npmjs.com/package/ngx-toastr
 -- Loading indicator --
 https://nils-mehlhorn.de/posts/indicating-loading-the-right-way-in-angular
 
--- return Observable --
-https://angular.io/guide/rx-library
-getById(id: number): Observable<Product | undefined > {
-//https://angular.io/guide/rx-library
- return this.getAll().pipe(map(items => {
-     return items.find(item => id == item.id)}));
-}
 
---- Osztály átadsáa anuglár komponensnek ---
+--- Osztï¿½ly ï¿½tadsï¿½a anuglï¿½r komponensnek ---
 
 <div class="card-header" class="{{ cardClass }}">
     <div class="ct-chart" id="productsStatusChartId"></div>
@@ -686,7 +567,7 @@ class Test {
     Konvertalt() {   
         let y = 5;
         let result = String(y);
-        console.log("Konvertalálam", result );
+        console.log("Konvertalï¿½lam", result );
     }
     Klasszik() {   
         let y = 5;
@@ -722,7 +603,7 @@ test.Klasszik();
     <ion-content>
       <ion-grid>
         <ion-row>
-          <ion-col size-md="6" offset-md="3"> md méret fölött fél széles és középre igazított
+          <ion-col size-md="6" offset-md="3"> md mï¿½ret fï¿½lï¿½tt fï¿½l szï¿½les ï¿½s kï¿½zï¿½pre igazï¿½tott
             <ion-card>
               <ion-card-title>
                 New expense
@@ -747,23 +628,23 @@ test.Klasszik();
 
 </html>
 
---- Angulár publikálása GitHub Pages funkcióval ---
+--- Angulï¿½r publikï¿½lï¿½sa GitHub Pages funkciï¿½val ---
 Hogyan tuodm ki tenni a github pages-re
 https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
 
-Ez kell hogy legyen a repo név: marrob.github.io
+Ez kell hogy legyen a repo nï¿½v: marrob.github.io
 https://github.com/marrob/marrob.github.io
-Ezen a címen tudod lekérni az oldalt a bönbészoböl:https://marrob.github.io/
+Ezen a cï¿½men tudod lekï¿½rni az oldalt a bï¿½nbï¿½szobï¿½l:https://marrob.github.io/
 
-új repó az legyen ami github nevem: marrob.github.io
+ï¿½j repï¿½ az legyen ami github nevem: marrob.github.io
 npm run build --prod
-csak a legbelso tartalom mappa kell! semmi más
+csak a legbelso tartalom mappa kell! semmi mï¿½s
 
 --- nettuts server ---
 https://nettuts.hu/jms/cherryApp/porducts
 https://nettuts.hu/jms/marrob/products
 
-CORS hiba: a szerver nem engedi meg hogy máshonn küldjenek kérést
+CORS hiba: a szerver nem engedi meg hogy mï¿½shonn kï¿½ldjenek kï¿½rï¿½st
 
 fetch('https://nettuts.hu/jms/proba/products').then(
   response=>response.json()
@@ -771,34 +652,7 @@ fetch('https://nettuts.hu/jms/proba/products').then(
   data=> console.log(data)
 )
 
---- rxjs operators ---
-csak observable-nek van pipe-ja ez a pipe nem ugyan az mint a ng g pipe...
-emitálás: az observable értéket ad, button klick is lehet emit, http válasz stb...
 
-of(),
-switchMap: ha van belso observable és ha külso emitál valamit, akkor belso cancel?dik
-map: nem obeservable tér vissza, ( a map áltlában a lista elemein végez valami m?veletet)
-exhaustMap: ami a megvárja hogy belso observable befejezze a dolgát
-mergeMap:a külsö observable hozza létre az új szálat -> új konkurens szálon índitja subsricbe
-concatMap: külsö observable emitál akkor létrehoz, 
-
-
-observable.pipe(take(4)): annyiszor veszi az obeservable ahányérték van 
-tap() Used when you want to affect outside state with a notification without altering the notification
-
----
-import { fromEvent, interval } from "rxjs";
-import { concatMap, take, exhaustMap } from "rxjs/operators";
-
-const clicks = fromEvent(document, "click");
-const result = clicks.pipe(exhaustMap(ev => interval(1000).pipe(take(4))));
-result.subscribe(x => console.log(x));
-
-// Results in the following:
-// (results are not concurrent)
-// For every click on the "document" it will emit values 0 to 3 spaced
-// on a 1000ms interval
-// one click = 1000ms-> 0 -1000ms-> 1 -1000ms-> 2 -1000ms-> 3
 
 --- filter ---
 use filter to return property values in an object
@@ -850,31 +704,31 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'mókus'`, () => {
+  it(`should have as title 'mï¿½kus'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('mókus');
+    expect(app.title).toEqual('mï¿½kus');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('mókus app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('mï¿½kus app is running!');
   });
 
   it('should sumirze the orders', ()=>{
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     const orders=[
-      { id:1, name:'süt?', amount: 45000 },
-      { id:2, name:'vasaló', amount: 14000 },
-      { id:3, name:'porszivó', amount: 30000 },
+      { id:1, name:'sï¿½t?', amount: 45000 },
+      { id:2, name:'vasalï¿½', amount: 14000 },
+      { id:3, name:'porszivï¿½', amount: 30000 },
     ];
     expect(app.getSumOfOrders(orders)).toEqual(89000);
   });
 });
---- Szopások ---
+--- Szopï¿½sok ---
 selectCategory(category){
   let index = this.categoryCardList.findIndex((item)=>{ return item.category == category});
   this.chosenByCategory=this.categoryCardList[index];
@@ -885,13 +739,13 @@ selectCategory(category){
   this.chosenByCategory=this.categoryCardList[index];
 }
 
---- Objektum klónoása, hard copy, object clone ---
+--- Objektum klï¿½noï¿½sa, hard copy, object clone ---
 getPlace(id:string){
   return {...this._places.find( p=>p.id === id)};
 }
 
---- Általános ---
+--- ï¿½ltalï¿½nos ---
 --- ngOnInit ---
-mindig egyszer fut le, ezután a cachb?l veszi az oldalt
+mindig egyszer fut le, ezutï¿½n a cachb?l veszi az oldalt
 
 
